@@ -24,9 +24,12 @@
     "types": [
       "vitest/globals", 
       "react",
-      "node" // Needed for modules resolution and environment setup
+      "node"
     ]
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "src", 
+    "vite.config.ts", 
+    "vitest.config.ts"
+  ]
 }
