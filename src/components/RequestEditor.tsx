@@ -1,6 +1,6 @@
 import React from 'react'
 
-// Define props interface (same as previous step)
+// Define props interface
 interface RequestEditorProps {
   request: {
     method: string;
@@ -170,6 +170,7 @@ export default function RequestEditor({
         </button>
       </div>
       
+      {/* THIS IS THE MISSING BUTTON'S CONTAINER */}
       <div className="body-controls" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
         <p style={{ margin: 0, fontWeight: 'bold' }}>Request Body</p>
         <button className="ai-assist" onClick={handleAI} disabled={isLoading || !isBodyAllowed}>
