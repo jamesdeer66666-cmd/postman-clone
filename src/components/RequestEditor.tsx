@@ -170,10 +170,25 @@ export default function RequestEditor({
         </button>
       </div>
       
-      {/* THIS IS THE MISSING BUTTON'S CONTAINER */}
-      <div className="body-controls" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+      {/* *** FINAL FIX: Aggressive inline style to ensure display *** */}
+      <div className="body-controls" style={{ 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center', 
+          marginBottom: '0.5rem',
+          // FORCING VISIBILITY and HEIGHT:
+          display: 'flex', 
+          visibility: 'visible', 
+          minHeight: '30px', 
+          border: '2px solid red', // *** AGGRESSIVE VISUAL MARKER ***
+      }}>
         <p style={{ margin: 0, fontWeight: 'bold' }}>Request Body</p>
-        <button className="ai-assist" onClick={handleAI} disabled={isLoading || !isBodyAllowed}>
+        <button 
+          className="ai-assist" 
+          onClick={handleAI} 
+          disabled={isLoading || !isBodyAllowed} 
+          style={{ border: '2px solid green' }} // *** AGGRESSIVE VISUAL MARKER ***
+        >
           ✨ AI Assist
         </button>
       </div>
@@ -188,3 +203,4 @@ export default function RequestEditor({
     </section>
   )
 }
+
